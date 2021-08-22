@@ -36,6 +36,12 @@ for(flag of flags){
         }
         fs.writeFileSync(filenames[filenames.length-1],fileData);
     }
+    else if(flag=="-new"){
+        // -new flag is used to create the files with names of all the arguments passed
+        for(file of filenames){
+            fs.writeFileSync(file,"");
+        }
+    }
 }//but below operations will display the files data 
 
 //operations which involve already created files and operation on each files
@@ -98,11 +104,6 @@ for(files of filenames){
             filedata = tempd;
             //making chages in the file too
             fs.writeFileSync(files,filedata);
-        }
-        //extra flags
-        else if(flag=="-new"){
-            // -new flag is used to create the files with names of all the arguments passed
-            fs.writeFileSync(files,"");
         }
 
     }
